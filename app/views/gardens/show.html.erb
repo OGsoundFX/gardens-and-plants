@@ -9,8 +9,16 @@
     <% @garden.plants.each do |plant| %>
       <div class="col-4">
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= plant.image_url %>')">
+          <%= link_to "Add tag",  new_plant_plant_tag_path(plant), class: "btn btn-primary add-tag-btn"  %>
           <%= plant.name %>
           <%= link_to "+", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "card-remove-link" %>
+            <ul class="list-inline tag-list">
+              <% plant.tags.each do |tag| %>
+                <li class="list-inline-item">
+                  <%= tag.name %>
+                </li>
+              <% end %>
+            </ul>
         </div>
       </div>
     <% end %>

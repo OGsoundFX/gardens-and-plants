@@ -38,3 +38,23 @@
     opacity: 1;
   }
 }
+
+.add-tag-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.tag-list {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  li {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: pink;
+    margin-right: 4px;
+  }
+}
